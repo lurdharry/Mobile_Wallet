@@ -1,4 +1,4 @@
-// import React,{Component} from 'react'
+
 import {StyleSheet} from 'react-native'
 import {widthPercentageToDP,heightPercentageToDP,} from 'react-native-responsive-screen'
 
