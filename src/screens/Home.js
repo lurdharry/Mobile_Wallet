@@ -8,7 +8,7 @@ import RightArrow from '../assets/svgs/Right.svg'
 import UserIcon from '../assets/svgs/UserIcon.svg'
 import SendIcon from '../assets/svgs/SendMoney.svg'
 import Piggy from '../assets/svgs/Piggy.svg'
-import OfferIcon from '../assets/svgs/OfferIcon.svg'
+// import OfferIcon from '../assets/svgs/OfferIcon.svg'
 import {User} from '../components/UserData'
 import {Actions} from '../components/action'
 import { TouchableOpacity } from 'react-native-gesture-handler'
@@ -29,14 +29,59 @@ ActionStyle=(title)=>{
 }
 
 export default class Home extends React.Component{
-
+    GotoPage=(title)=>{
+        if (title==='Send Money'){
+            this.props.navigation.navigate('SendMoney')
+        }
+        else if (title==='Recieve Money'){
+            this.props.navigation.navigate('RecieveMoney')
+        }
+        else if (title==='Manage Money'){
+            this.props.navigation.navigate('SendMoney')
+        }
+        else if (title==='Offers'){
+            this.props.navigation.navigate('SendMoney')
+        }
+    }
+ ActionIcons=(title)=>{
+        if(title==='Send Money'){
+            return(
+                <View style={{flexDirection:'row',alignItems:"center",justifyContent:'center',marginRight:wp(30)}}>
+                    <View style={{backgroundColor:'#712CE2',width:wp(30),height:wp(30),borderRadius:wp(15)}}></View>
+                    <SendIcon style={{marginLeft:wp(-10)}}/>
+                </View>
+            )
+        }
+        else if(title==='Recieve Money'){
+            return(
+                <View style={{flexDirection:'row',alignItems:"center",justifyContent:'center',marginRight:wp(30)}}>
+                    <View style={{backgroundColor:'#712CE2',width:wp(30),height:wp(30),borderRadius:wp(15)}}></View>
+                    <SendIcon style={{marginLeft:wp(-35)}}/>
+                </View>
+            )
+        }
+        else {
+            return (
+            <View style={{backgroundColor:title=='Manage Money'?'white':'#712CE2',
+                
+                width:wp(30),height:wp(30),marginRight:wp(30),alignItems:"center",justifyContent:'center',borderWidth:1,borderColor:'#712CE2',borderRadius:wp(15)}}>
+                { title==='Manage Money'?
+                <Piggy fill='white'/>
+                :
+               <Image style={{width:wp(14),height:wp(14)}} resizeMode='contain' source={require('../assets/images/Offer.png')}/>
+                // <OfferIcon style={{width:wp(-10),height:wp(-10)}} resizeMode='contain' />
+                }
+            </View>
+            )
+        }
+    } 
     render(){
         return(
             <View style={styles.container}>
                 <ScrollView showsVerticalScrollIndicator={false}>
                 <ImageBackground   
                     source={require('../assets/images/HomeBg.png')}
-                    // resizeMode='cover'
+                    resizeMode='cover'
                     style={styles.svg}
                 
                 >
@@ -61,16 +106,19 @@ export default class Home extends React.Component{
                 <View style={styles.bottomView}>
                     {
                         Actions.map((item,index)=>{
-                            return (
-                                <Transactions
-                                    details={item}
-                                    key={index}
-                                    ActionStyle={()=>this.ActionStyle()}
-                                    otherData={styles}
-                                />
+                            return(
+                            
+                                        <TouchableOpacity onPress={()=>this.GotoPage(item.title)} style={ActionStyle(item.title)}>
+                                            {this.ActionIcons(item.title)}
+                                            <BoldText style={{fontSize:hp(16),color:"#712ce2"}}>{item.title}</BoldText>
+                                            <RightArrow style={styles.arrow}/>
+                                
+                                        </TouchableOpacity>
+            
                             )
                         })
                     }
+                    
                 </View>
             {/* end of bottomView */}
                 <ScrollView style={styles.scroll} showsHorizontalScrollIndicator={false} contentContainerStyle={styles.AccountScroll} horizontal={true} >
@@ -92,42 +140,11 @@ export default class Home extends React.Component{
         )
     }
 }
-const ActionIcons=(title)=>{
-    if(title==='Send Money'){
-        return(
-            <View style={{flexDirection:'row',alignItems:"center",justifyContent:'center',marginRight:wp(30)}}>
-                <View style={{backgroundColor:'#712CE2',width:wp(30),height:wp(30),borderRadius:wp(15)}}></View>
-                <SendIcon style={{marginLeft:wp(-10)}}/>
-            </View>
-        )
-    }
-    else if(title==='Recieve Money'){
-        return(
-            <View style={{flexDirection:'row',alignItems:"center",justifyContent:'center',marginRight:wp(30)}}>
-                <View style={{backgroundColor:'#712CE2',width:wp(30),height:wp(30),borderRadius:wp(15)}}></View>
-                <SendIcon style={{marginLeft:wp(-35)}}/>
-            </View>
-        )
-    }
-    else {
-        return (
-        <View style={{backgroundColor:title=='Manage Money'?'white':'#712CE2',
-            
-            width:wp(30),height:wp(30),marginRight:wp(30),alignItems:"center",justifyContent:'center',borderWidth:1,borderColor:'#712CE2',borderRadius:wp(15)}}>
-            { title==='Manage Money'?
-            <Piggy fill='white'/>
-            :
-           <Image style={{width:wp(14),height:wp(14)}} resizeMode='contain' source={require('../assets/images/Offer.png')}/>
-            // <OfferIcon style={{width:wp(-10),height:wp(-10)}} resizeMode='contain' />
-            }
-        </View>
-        )
-    }
-}
+
 const Transactions=(props)=>{
     const{title,img} =props.details
     return(
-        <TouchableOpacity style={ActionStyle(title)}>
+        <TouchableOpacity onPress={()=>props.navigation.navigate('SendMoney')} style={ActionStyle(title)}>
             {ActionIcons(title)}
             <BoldText style={{fontSize:hp(16),color:"#712ce2"}}>{title}</BoldText>
             <RightArrow style={styles.arrow}/>
@@ -202,7 +219,7 @@ const styles =StyleSheet.create({
     },
     scroll:{
         position:'absolute',
-        top:hp(180)
+        top:hp(140)
     },
     Accounts:{
         backgroundColor:'rgba(255,255,255,0.8)',
@@ -244,7 +261,7 @@ const styles =StyleSheet.create({
         alignItems:"center"
     },
     svg:{
-        height:(306/375)*wp(375),
+        height:(262/375)*wp(375),
         width:wp(375)
     },
     container:{
