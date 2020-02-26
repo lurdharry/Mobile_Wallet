@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="560" height="604">
+	<defs>
+		<clipPath id="clip_0">
+			<rect x="72" y="-2200" width="1500" height="3248" clip-rule="evenodd"/>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#clip_0)">
+		<path fill="rgb(255,255,255)" stroke="none" transform="matrix(4 0 0 4 192 304)" d="M34 68C52.7777 68 68 52.7777 68 34C68 15.2223 52.7777 0 34 0C15.2223 0 0 15.2223 0 34C0 52.7777 15.2223 68 34 68Z"/>
+	</g>
+	<defs>
+		<clipPath id="clip_1">
+			<path d="M464 440C464 515.111 403.111 576 328 576C252.889 576 192 515.111 192 440C192 364.889 252.889 304 328 304C403.111 304 464 364.889 464 440Z" clip-rule="evenodd"/>
+		</clipPath>
+		<linearGradient id="gradient_0" gradientUnits="userSpaceOnUse" x1="0" y1="48.240124" x2="113.4" y2="48.240124">
+			<stop offset="0" stop-color="rgb(142,45,226)" stop-opacity="0.64705884"/>
+			<stop offset="0.97888821" stop-color="rgb(74,0,224)" stop-opacity="0.64705884"/>
+			<stop offset="1" stop-color="rgb(74,0,224)" stop-opacity="0.64705884"/>
+		</linearGradient>
+	</defs>
+	<g clip-path="url(#clip_1)">
+		<path fill="url(#gradient_0)" fill-opacity="0.64705884" stroke="none" transform="matrix(4 0 0 4 0 95.074)" d="M56.7 113.25C88.0145 113.25 113.4 87.8981 113.4 56.625C113.4 25.3519 88.0145 0 56.7 0C25.3855 0 0 25.3519 0 56.625C0 87.8981 25.3855 113.25 56.7 113.25Z"/>
+	</g>
+	<defs>
+		<clipPath id="clip_2">
+			<path d="M464 440C464 515.111 403.111 576 328 576C252.889 576 192 515.111 192 440C192 364.889 252.889 304 328 304C403.111 304 464 364.889 464 440Z" clip-rule="evenodd"/>
+		</clipPath>
+		<linearGradient id="gradient_1" gradientUnits="userSpaceOnUse" x1="0" y1="42.880108" x2="100.8" y2="42.880108">
+			<stop offset="0" stop-color="rgb(142,45,226)" stop-opacity="0.64705884"/>
+			<stop offset="0.97888821" stop-color="rgb(74,0,224)" stop-opacity="0.64705884"/>
+			<stop offset="1" stop-color="rgb(74,0,224)" stop-opacity="0.64705884"/>
+		</linearGradient>
+	</defs>
+	<g clip-path="url(#clip_2)">
+		<path fill="url(#gradient_1)" fill-opacity="0.64705884" stroke="none" transform="matrix(4 0 0 4 156.8 201.333)" d="M50.4 100.667C78.2352 100.667 100.8 78.1317 100.8 50.3333C100.8 22.535 78.2352 0 50.4 0C22.5648 0 0 22.535 0 50.3333C0 78.1317 22.5648 100.667 50.4 100.667Z"/>
+	</g>
+	<defs>
+		<clipPath id="clip_3">
+			<path d="M464 440C464 515.111 403.111 576 328 576C252.889 576 192 515.111 192 440C192 364.889 252.889 304 328 304C403.111 304 464 364.889 464 440Z" clip-rule="evenodd"/>
+		</clipPath>
+		<linearGradient id="gradient_2" gradientUnits="userSpaceOnUse" x1="0" y1="42.880104" x2="100.8" y2="42.880104">
+			<stop offset="0" stop-color="rgb(142,45,226)" stop-opacity="0.64705884"/>
+			<stop offset="0.97888821" stop-color="rgb(74,0,224)" stop-opacity="0.64705884"/>
+			<stop offset="1" stop-color="rgb(74,0,224)" stop-opacity="0.64705884"/>
+		</linearGradient>
+	</defs>
+	<g clip-path="url(#clip_3)">
+		<path fill="url(#gradient_2)" fill-opacity="0.64705884" stroke="none" transform="matrix(4 0 0 4 28 0)" d="M50.4 100.667C78.2352 100.667 100.8 78.1317 100.8 50.3333C100.8 22.535 78.2352 0 50.4 0C22.5648 0 0 22.535 0 50.3333C0 78.1317 22.5648 100.667 50.4 100.667Z"/>
+	</g>
+
+</svg>
