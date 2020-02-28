@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="36">
+	<defs>
+		<clipPath id="clip_0">
+			<rect x="-257" y="-654" width="375" height="812" clip-rule="evenodd"/>
+		</clipPath>
+		<linearGradient id="gradient_0" gradientUnits="userSpaceOnUse" x1="0" y1="15.285666" x2="26.998446" y2="15.285666">
+			<stop offset="0" stop-color="rgb(142,45,226)" stop-opacity="0.80000001"/>
+			<stop offset="1" stop-color="rgb(74,0,224)" stop-opacity="0.80000001"/>
+		</linearGradient>
+	</defs>
+	<g clip-path="url(#clip_0)">
+		<path fill="url(#gradient_0)" fill-opacity="0.80000001" stroke="none" transform="translate(0.345215 0.0765991)" d="M20.9425 9.26808L26.6959 9.26808C27.2329 9.26808 27.6164 9.65106 27.5781 10.1872L27.5781 33.1277C27.5781 34.6596 26.3507 35.8851 24.8164 35.8851L2.76164 35.8851C1.2274 35.8851 0 34.6596 0 33.1277L0 10.1872C0 9.68936 0.421918 9.26808 0.920548 9.26808L6.67397 9.26808L6.67397 7.39149C6.67397 3.29362 9.89589 0 13.8082 0C17.7205 0 20.9425 3.29362 20.9425 7.39149L20.9425 9.26808ZM13.8466 2.25957C11.1616 2.25957 9.0137 4.55745 9.0137 7.35319L9.0137 9.22979L18.6795 9.22979L18.6795 7.35319C18.6795 4.55745 16.5315 2.25957 13.8466 2.25957Z" fill-rule="evenodd"/>
+	</g>
+
+</svg>
