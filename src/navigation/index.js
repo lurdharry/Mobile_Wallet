@@ -13,7 +13,7 @@ export default MainNavigation = createAppContainer(
         ManageMoney: { screen: ManageMoney,navigationOptions:{headerShown:false}},
       },
       {
-        initialRouteName:'ManageMoney'
+        initialRouteName:'Home'
     }
 ));
 

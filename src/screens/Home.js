@@ -37,7 +37,7 @@ export default class Home extends React.Component{
             this.props.navigation.navigate('RecieveMoney')
         }
         else if (title==='Manage Money'){
-            this.props.navigation.navigate('SendMoney')
+            this.props.navigation.navigate('ManageMoney')
         }
         else if (title==='Offers'){
             this.props.navigation.navigate('SendMoney')
