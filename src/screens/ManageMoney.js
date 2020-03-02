@@ -9,6 +9,7 @@ import FoodIcon from '../assets/svgs/food.svg'
 import CarIcon from '../assets/svgs/car.svg'
 import MovieIcon from '../assets/svgs/movie.svg'
 import Shopping from '../assets/svgs/shopping.svg'
+import Plus from '../assets/svgs/PlusButton.svg'
 import UserIcon from '../assets/svgs/UserIcon2.svg'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
@@ -83,7 +84,6 @@ prevMonth(){
         return(
             <View style={styles.container}>
                 <ScrollView showsVerticalScrollIndicator={false}>
-                    {/* start of Header */}
                     <ImageBackground   
                     resizeMode='stretch'
                         source={require('../assets/images/TopHead.png')}
@@ -99,8 +99,7 @@ prevMonth(){
                         <RegularText style={styles.title}>Manage Money</RegularText>
                 
                     </ImageBackground>
-            {/* end of Header */}
-            {/* start of month */}
+            
                 <View style={styles.topView}>
                     <View style={styles.dateView}>
                         <TouchableOpacity onPress={()=>this.prevMonth()}>
@@ -117,7 +116,7 @@ prevMonth(){
                     </View>
                 </View>
 
-            {/* end of month */}
+            
             <View style={styles.expenSummary}>
                 <BoldText style={styles.summary}>Expenditure Summary</BoldText>
                 <View style={styles.CatContainer}>
@@ -137,7 +136,12 @@ prevMonth(){
 
             </View>
             </ScrollView>
-        </View>
+            <View style={{position:'absolute',bottom:hp(50),right:wp(22)}}>
+                <TouchableOpacity activeOpacity={.5} onPress={()=>this.props.navigation.navigate('AddEntry')} style={[styles.plusButton]}>
+                        <Text style={{fontSize:hp(50),color:'white'}}>+</Text>
+                </TouchableOpacity>
+            </View>
+         </View>
         )
     }
 }
@@ -152,6 +156,19 @@ const Category=(props)=>{
     )
 }
 const styles =StyleSheet.create({
+    plusButton:{
+        // position:'absolute',
+        height:wp(65),
+        alignItems:'center',
+        justifyContent:'center',
+        width:wp(65),
+        borderRadius:hp(42),
+        backgroundColor:'#712ce2',
+        // top:hp(370)
+        // bottom:56,
+        
+        
+    },
     imageBg:{
         height:(81/99)*wp(99),
         width:wp(99),
@@ -198,6 +215,7 @@ const styles =StyleSheet.create({
     },
     topView:{
         // borderBottomLeftRadius:hp(30)
+        backgroundColor:'white'
     },
     dateText:{
         marginHorizontal:wp(10)
@@ -230,7 +248,6 @@ const styles =StyleSheet.create({
     top:{
         flexDirection:'row',
         justifyContent:'space-between',
-        // alignItems:'center'
     },
     header:{
         height:(104/375)*wp(375),
@@ -241,6 +258,8 @@ const styles =StyleSheet.create({
     container:{
         flex:1,
         // alignItems:"center",
-        backgroundColor:"white"
+        // justifyContent:'center',
+        backgroundColor:"#f1ebfb",
+        // height:'100%'
     },
 })
