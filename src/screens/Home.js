@@ -108,7 +108,9 @@ export default class Home extends React.Component{
                         Actions.map((item,index)=>{
                             return(
                             
-                                        <TouchableOpacity onPress={()=>this.GotoPage(item.title)} style={ActionStyle(item.title)}>
+                                        <TouchableOpacity
+                                            key={index}
+                                            onPress={()=>this.GotoPage(item.title)} style={ActionStyle(item.title)}>
                                             {this.ActionIcons(item.title)}
                                             <BoldText style={{fontSize:hp(16),color:"#712ce2"}}>{item.title}</BoldText>
                                             <RightArrow style={styles.arrow}/>
