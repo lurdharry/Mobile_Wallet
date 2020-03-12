@@ -88,8 +88,8 @@ addCategory = item => {
     // alert('Added')
     var selectedItems = [...this.state.selectedCategories]
     if (selectedItems.includes(item)) {
-    //   selectedItems.splice(selectedItems.indexOf(item), 1)
-    //   this.setState({ selectedCategories: selectedItems })
+      selectedItems.splice(selectedItems.indexOf(item), 1)
+      this.setState({ selectedCategories: selectedItems })
     } else {
       selectedItems.push(item)
       this.setState({ selectedCategories: selectedItems })
