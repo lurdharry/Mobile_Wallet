@@ -69,7 +69,7 @@ export default class AddEntry extends React.Component{
             months:Months,
             index:5,
             entryType:'hey',
-            category:null
+            selectedCategories:[]
         }
 nextMonth(){
     if(this.state.index<=8){
@@ -84,6 +84,17 @@ prevMonth(){
 AddedItem(){
     alert('Entry Added')
 }
+addCategory = item => {
+    // alert('Added')
+    var selectedItems = [...this.state.selectedCategories]
+    if (selectedItems.includes(item)) {
+    //   selectedItems.splice(selectedItems.indexOf(item), 1)
+    //   this.setState({ selectedCategories: selectedItems })
+    } else {
+      selectedItems.push(item)
+      this.setState({ selectedCategories: selectedItems })
+    }
+  }
     render(){
         return(
             <View style={styles.container}>
@@ -158,22 +169,12 @@ AddedItem(){
                     {
                         Categories.map((item,index)=>{
                             return(
-                            <TouchableOpacity
-                                activeOpacity={.5}
-                                key={index}
-                                onPress={()=>this.setState({category:item.name})}  style={styles.catItem}
-                             >
-                                {
-                                    this.state.category===item.name?
-                                    <View style={styles.selected}>
-                                        <MarkIcon style={styles.mark}/>
-                                    </View>
-                                    :
-                                    <View style={styles.notSelected}></View>
-                                }
-                                {item.img}
-                                <RegularText style={styles.amount}>{item.name}</RegularText>
-                            </TouchableOpacity>
+                            <CategoryItem
+                                key ={index}
+                                category={item}
+                                selected={this.state.selectedCategories.includes(item.name)}
+                                onPressItem={this.addCategory}
+                            />
                             )
                         })
                     }
@@ -193,6 +194,33 @@ AddedItem(){
         )
     }
 }
+class CategoryItem extends React.PureComponent {
+    _onPress = () => {
+      this.props.onPressItem(this.props.category.name)
+    }
+  
+    render () {
+      const { name, img } = this.props.category
+      return (
+        <TouchableOpacity
+                activeOpacity={.5}
+                // key={index}
+                onPress={this._onPress}
+                  style={styles.catItem}
+                >
+                                {
+                                    this.props.selected?
+                                    <View style={styles.selected}>
+                                        <MarkIcon style={styles.mark}/>
+                                    </View>
+                                    :
+                                    <View style={styles.notSelected}></View>
+                                }
+                                {img}
+                                <RegularText style={styles.amount}>{name}</RegularText>
+                            </TouchableOpacity>
+    )}}
+
 const styles =StyleSheet.create({
     inputForm:{
         width:wp(315),
