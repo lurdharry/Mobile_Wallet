@@ -5,6 +5,7 @@ import SendMoney from '../screens/SendMoney'
 import RecieveMoney from '../screens/RecieveMoney'
 import ManageMoney from '../screens/ManageMoney'
 import AddEntry from '../screens/AddEntry'
+import Animation from '../screens/Animation'
 
 
 export default MainNavigation = createAppContainer(
@@ -14,10 +15,12 @@ export default MainNavigation = createAppContainer(
         RecieveMoney: { screen: RecieveMoney,navigationOptions:{headerShown:false}},
         ManageMoney: { screen: ManageMoney,navigationOptions:{headerShown:false}},
         AddEntry: { screen: AddEntry,navigationOptions:{headerShown:false}},
+        Animation: { screen: Animation,navigationOptions:{headerShown:false}},
+
 
       },
       {
-        initialRouteName:'Home'
+        initialRouteName:'Animation'
     }
 ));
 
