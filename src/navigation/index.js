@@ -20,7 +20,7 @@ export default MainNavigation = createAppContainer(
 
       },
       {
-        initialRouteName:'Animation'
+        initialRouteName:'Home'
     }
 ));
 
